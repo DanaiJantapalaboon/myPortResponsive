@@ -1,7 +1,7 @@
 const express = require('express');
-const server = express();
+const app = express();
 const port = 3000;
 const path = require('path');
 
-server.use(express.static(path.join(__dirname, '/page/')));
-server.listen(port, () => {})
+app.use(express.static(path.join(__dirname, '/page/')));
+app.listen(port, () => {})
