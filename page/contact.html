@@ -147,16 +147,23 @@
                 <input type="hidden" name="_next" value="https://danaicv.netlify.app/contact.html">
 
                 <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Your name..">
+                <input type="text" name="name" placeholder="Your name.." required>
             
                 <label for="email">E-mail</label>
-                <input type="text" name="email" placeholder="E-mail Address">
+                <input type="text" name="email" placeholder="E-mail Address" required>
             
                 <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
             
-                <input type="submit" value="Submit">
+                <input type="submit" onclick="successPopup()">
               </form>
+
+              <script>function successPopup() {
+                  Swal.fire(
+                    'Message Send!',
+                    'ข้อความของท่านได้ถูกส่งไปเรียบร้อยแล้ว',
+                    'success'
+                )}</script>
 
         </div>
     </div>
@@ -165,7 +172,7 @@
 
     <!--Footer-->
     <footer class="text-white bg-primary py-2">
-        <p class="my-auto">&copy 2022 Fully HTML/CSS with Bootstrap Responsive Written by Danai</p>
+        <p class="my-auto">&copy 2022 Fully HTML/CSS with Bootstrap Responsive Written by Danai J.</p>
     </footer>
 </body>
 </html>
