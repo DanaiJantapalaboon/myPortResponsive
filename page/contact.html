@@ -141,10 +141,10 @@
             <h5>Or send some message to me this form..</h5>
             <br>
 
-            <form action="https://formsubmit.co/danai.athlon@gmail.com" method="POST">
+            <form action="https://formsubmit.co/danai.athlon@gmail.com" method="POST" onsubmit="return successPopup()">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="MyPortfolio - มีข้อความใหม่">
-                <input type="hidden" name="_next" value="https://danaicv.netlify.app/contact.html">
+                <input type="hidden" name="_next" value="https://env-1183711.th1.proen.cloud/">
 
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Your name.." required>
@@ -155,7 +155,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
             
-                <input type="submit" onclick="successPopup()">
+                <input type="submit">
               </form>
 
               <script>function successPopup() {
