@@ -141,29 +141,28 @@
             <h5>Or send some message to me this form..</h5>
             <br>
 
-            <form action="https://formsubmit.co/danai.athlon@gmail.com" method="POST" onsubmit="return successPopup()">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="MyPortfolio - มีข้อความใหม่">
-                <input type="hidden" name="_next" value="https://env-1183711.th1.proen.cloud/contact.html">
-
+            <form class="contact-form" onsubmit="return successPopup()">
                 <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Your name.." required>
+                <input type="text" id="name" placeholder="Your name.." required>
             
                 <label for="email">E-mail</label>
-                <input type="text" name="email" placeholder="E-mail Address" required>
+                <input type="text" id="email" placeholder="E-mail Address.." required>
             
                 <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+                <textarea id="message" id="message" placeholder="Write something.." style="height:200px" required></textarea>
             
-                <input type="submit">
-              </form>
+                <input type="submit" class="submit" value="Send Message">
+            </form>
 
-              <script>function successPopup() {
+            <script>function successPopup() {
                   Swal.fire(
                     'Message Send!',
                     'ข้อความของท่านได้ถูกส่งไปเรียบร้อยแล้ว',
                     'success'
                 )}</script>
+
+            <!-- nodeMailer -->
+            <script src="./js/mailSend.js"></script>
 
         </div>
     </div>
