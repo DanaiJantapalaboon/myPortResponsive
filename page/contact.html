@@ -141,7 +141,7 @@
             <h5>Or send some message to me this form..</h5>
             <br>
 
-            <form class="contact-form" onsubmit="return successPopup()">
+            <form class="contact-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" placeholder="Your name.." required>
             
@@ -154,15 +154,60 @@
                 <input type="submit" class="submit" value="Send Message">
             </form>
 
-            <script>function successPopup() {
+            <!--<script>function successPopup() {
                   Swal.fire(
                     'Message Send!',
                     'ข้อความของท่านได้ถูกส่งไปเรียบร้อยแล้ว',
                     'success'
-                )}</script>
+                )}</script>-->
 
             <!-- nodeMailer -->
-            <script src="./js/mailSend.js"></script>
+            <!--<script src="./js/mailSend.js"></script>-->
+            <script>
+                const contactForm = document.querySelector('.contact-form')
+
+                let name = document.getElementById('name')
+                let email = document.getElementById('email')
+                let message = document.getElementById('message')
+
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault()
+
+                    let formData = {
+                        name: name.value,
+                        email: email.value,
+                        message: message.value
+                    }
+
+                    let xhr = new XMLHttpRequest()
+                    xhr.open('POST', '/')
+                    xhr.setRequestHeader('content-type', 'application/json')
+                    xhr.onload = function() {
+                        console.log(xhr.responseText)
+                        if(xhr.responseText == 'success') {
+                            Swal.fire(
+                                'Message Send!',
+                                'ข้อความของท่านได้ถูกส่งไปเรียบร้อยแล้ว',
+                                'success'
+                            )
+                            name.value = ''
+                            email.value = ''
+                            message.value = ''
+                        }
+
+                        else {
+                            Swal.fire(
+                                'Something went wrong!',
+                                'พบข้อผิดพลาด กรุณาตรวจสอบการเชื่อมต่ออินเตอร์เน็ต',
+                                'error'
+                            )
+                        }
+                    }
+
+                    xhr.send(JSON.stringify(formData))
+
+                })
+            </script>
 
         </div>
     </div>
