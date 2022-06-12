@@ -16,16 +16,16 @@ app.post('/', (req, res) => {
     console.log(req.body)
 
     const transporter = nodemailer.createTransport({
-        service: 'sodsaisoft',
+        service: 'hotmail',
         auth: {
-            user: 'sodsaiso@sodsaisoft.com',
-            pass: 'Xz*)IY735uae4N'
+            user: 'danai_athlon@hotmail.com',
+            pass: 'airimomo'
         }
     })
 
     const mailOptions = {
         from: req.body.email,
-        to: 'sodsaiso@sodsaisoft.com',
+        to: 'danai_athlon@hotmail.com',
         subject: `Message from ${req.body.email}`,
         text: req.body.message
     }
